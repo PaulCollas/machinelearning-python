@@ -419,6 +419,8 @@
 
 # ========= 5.PYTHON NUMERIQUE (NumPy) =========
 
+## 5.1 Création de tableaux
+
 # Import de la librairie numpy, avec le nommage np
 import numpy as np
 
@@ -441,54 +443,285 @@ import numpy as np
 
 # 3. Passer une liste de listes pour créer un tableau multidimensionnel.
 # Déclaration 2 lignes, 1 colonne, 3 éléments
-shape = (2, 1, 3)
+# shape = (2, 1, 3)
 # Création du tableau multidimensionnel
-data = np.ndarray(shape) 
+# data = np.ndarray(shape) 
 # Affichage du tableau multidimensionnel
-print(data) 
+# print(data) 
 
 
 
 
 # 4. Trouver les dimensions du tableau. (rows, columns).
+# l'attribut ndim donne le nombre de dimensions (ou axes) du tableau
+# print(data.ndim) 
+# l'attribut shape donne les dimensions sous forme d'un tuple avec ndim éléments
+# print(data.shape)
+# l'attribut size donne la taille du tableau, 
+# c'est-à-dire le nombre total d'éléments qu'il contient,
+# print(data.size)
 
 
 
-# 5. Expliquer le rôle et le résultat obtenu après l’utilisation de ces fonctions la classe numpy.
+# 5. Expliquer le rôle et le résultat obtenu après 
+# l’utilisation de ces fonctions la classe numpy.
+
 # a. arrange()
+# arrange retourne un objet de type numpy.ndarray.
+# Création d'un tableau numpy en utilisant arrange
+# arr1 = np.arange(1,13)
+# Afficher le tableau numpy
+# print(arr1)
+# Afficher le type de m
+# print(type(arr1))
 
 
 # b. reshape()
+# Reshape permet de redimensionner un tableau numpy.
+# arr2 = np.reshape(arr1,(4,3))
+# Afficher le nouveau tableau
+# print(arr2)
+# Afficher le type du nouveau tableau
+# print(type(arr2))
+
 
 
 # c. linspace()
+# linspace retourne un tableau numpy avec des éléments répartis uniformément
+# dans un intervalle spécifié.
+# arr3 = np.linspace(0, 10, 5)
+# Afficher le tableau numpy
+# print(arr3)
+# Afficher le type du tableau numpy
+# print(type(arr3))
 
 
 # d. ones()
+# ones retourne un tableau numpy rempli de 1.
+# arr4 = np.ones((3, 4))
+# Afficher le tableau numpy
+# print(arr4)
+# Afficher le type du tableau numpy
+# print(type(arr4))
 
 # e. zeros()
+# zeros retourne un tableau numpy rempli de 0.
+# arr5 = np.zeros((3, 4))
+# Afficher le tableau numpy
+# print(arr5)
+# Afficher le type du tableau numpy
+# print(type(arr5))
 
 # f. eye()
+# eye retourne un tableau numpy avec des 1 sur la diagonale et des 0 ailleurs.
+# arr6 = np.eye(3)
+# Afficher le tableau numpy
+# print(arr6)
+# Afficher le type du tableau numpy
+# print(type(arr6))
+
+
+
 
 
 # 6. Créer un tableau à l'aide d'une liste répétitive.
+# Création de la varaible x
+# x = np.array([[1,2],[3,4]])
+
+# Affichage de x
+# print(x)
+
 
 
 # 7. Répète les éléments d'un tableau en utilisant la fonction .repeat().
+# création de la variable x2
+# x2 = np.repeat(x, 2)
+# afficher x2
+# print(x2)
+
+
+
+## 5.2 Opérations 
+
+# 1. Utiliser +, -, *, / et ** pour effectuer 
+# 
+# des additions,
+# Création du tableau 1 et affichage du tableau 1
+t_1 = np.array([1, 2, 3, 4])
+# print(t_1)
+# Création du tableau 2 et affichage du tableau 2
+t_2 = np.array([5, 6, 7, 8]) 
+# print(t_2)
+# Addition des deux tableaux 
+t_1 + t_2
+# print(t_1 + t_2)
+
+
+# des soustractions, 
+t_1 - t_2
+# print(t_1 - t_2)
+ 
+# des multiplications,
+t_1 * t_2
+# print(t_1 * t_2)
+
+# des divisions 
+t_1 / t_2
+# print(t_1 / t_2)
+
+# et des puissances élémentaires.
+t_1 ** t_2
+# print(t_1 ** t_2)
+
+
+
+# Utiliser .dtype() pour voir le type de données 
+# des éléments du tableau
+# Afficher le type du tableau
+# print(t_1.dtype)
+
+
+# 3. Utiliser .astype() pour convertir en un type spécifique.
+# Afficher le tableau int
+t_5 = t_1.astype("float")
+# print(t_1, t_1.dtype)
+# Afficher le tableau float
+# print(t_5, t_5.dtype)
+
+
+# 4.Expliquer le résultat de print(x**2) ; 
+# (par exemple : x= [1 2 3] )
+# Création d'une liste x
+# x=[1,2,3]
+# Affiche de x avec les valeurs en puissance de 2
+# print(x**2)
+  
+
+
+
+# Calculer the dot product ; (par exemple : x= [1 2 3] et y= [3 2 4])
+
+x=[1,2,3] 
+y=[3,2,4]
+# dot = np.dot(x, y)[1,2,3] = sum(x[1,2,3] * y)
+
+# print(dot)
+
+
+
+
+
+## 5.3 Fonctions mathématiques
+# 1. Créer un tableau en utilisant numpy
+# Création du tableau
+t_3 = np.array([1, 2, 3, 4])
+# puis calculer la somme
+# print(t_3.sum())
+# la moyenne
+# print(t_3.mean())
+# le maximum
+# print(t_3.max())
+# le minimum
+# print(t_3.min())
+# l'écart-type
+# print(t_3.std())
+
+
+# 2. Afficher l’index des valeurs maximales et minimales du tableau
+t_3 = np.array([1, 2, 3, 4])
+# Afficher l'index du maximum
+# print(t_3.argmax())
+# Afficher l'index du minimum
+# print(t_3.argmin())
+
+
+
+
+## 5.4. Indexation / Tranchage
+
+s = np.arange(13)**2
+# print(s[0], s[4], s[-1])
+# 1. Expliquer le résultat de: s[-5 ::-2]
+# print(s[-5::2])
+
+
+
+# 2. Considérons le tableau multidimensionnel r,
+r = np.arange(36)
+r.resize((6, 6))
+#  print(r)
+
+# Utilisez la notation entre parenthèses pour trancher : 
+# `tableau[ligne, colonne]`
+r[2,2]
+# print(r)
+
+# Et utilisez : pour sélectionner 
+# une plage de lignes ou de colonnes
+r[3, 3:6]
+# print(r)
+
+# Ici, nous sélectionnons toutes les lignes 
+# jusqu'à (et n'incluant pas) la ligne 2, 
+# et toutes les colonnes jusqu'à (et n'incluant pas) la dernière colonne.
+r[:2, :-1]
+# print(r)
+
+
+
+
+
+# 3. Nous pouvons également effectuer une indexation conditionnelle. 
+# Expliquer le code suivant :
+
+r[r > 30] # Affiche les valeurs supérieures à 30
+r[r > 30] = 30 # Remplace les valeurs supérieures à 30 par 30
+# print(r) # Affiche le tableau r
 
 
 
 
 
 
+## 5.5. Copie de données
+# r2 est une tranche de r
+r2 = r[:3, :3]  
+# print(r2)
+# 1. Définissez les valeurs de cette tranche sur 
+# zéro ([:] sélectionne l'ensemble du tableau)
+r2[:] = 0
+# 2. Afficher r, vos remarques ?
+# print(r) # r2 est une vue de r, donc r est modifié 
+# 3. Ecrire un code qui permet de créer une copie qui 
+# n'affectera pas le tableau d'origine.
+r_copy = r.copy()
+# 4. Afficher encore une fois le tableau d’origine r, vos remarques ?
+# print(r) # r n'est pas modifié
 
 
 
 
 
 
+# 5.5.1. Itérer sur des tableaux
+# Créons un nouveau tableau 4 par 3 de nombres aléatoires 0-9.
+# Generate a random integer in range 0-9 into 4*3 array
+test = np.random.randint(0, 10, (4, 3))
+# test 
 
+# Generate a random integer in range 0-9 into 4*3 array
+test = np.random.randint(0, 10, (4, 3))
+# print(test)
 
+# 1. Itérer le tableau par ligne.
+# for row in test:
+#    print(row)
 
+# 2. Itérer le tableau par index.
+# for i in range(len(test)):
+#    print(test[i])
 
+# 3. Itérer le tableau par ligne et index.
+for i, row in enumerate(test):
+   print('row', i, 'is', row)
 
